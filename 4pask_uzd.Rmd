@@ -1,0 +1,24 @@
+---
+title: "4paskaitos_uzd"
+output: html_document
+date: "2024-02-28"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+  
+```{r}
+data2=read.csv("C:/Users/ugnkar2/Documents/data9013.csv")
+data3=read.csv("C:/Users/ugnkar2/Documents/data6089.csv")
+data4=read.sas7bdat("C:/Users/ugnkar2/Documents/donate.sas7bdat")
+```
+
+```{r}
+data=rbind(data2,data3)
+```
+```{r}
+lower_bound <- quantile(data4$TLSum, 0.25,na.rm=T)
+upper_bound <- quantile(data4$TLSum, 0.75,na.rm=T)
+```
+
